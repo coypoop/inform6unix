@@ -3,7 +3,7 @@ GIT = git
 
 #OPTS = -g -Wall -Wextra
 
-PREFIX = /usr/local
+PREFIX ?= /usr/local
 MAN_PREFIX = $(PREFIX)
 
 COMPVERSION = 6.33
