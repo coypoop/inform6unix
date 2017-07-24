@@ -81,20 +81,20 @@ else
 endif
 
 install: $(BINNAME) lib
-	install -d -m 755 $(BINDIR)
-	install -c -m 755 $(BINNAME) $(BINDIR)
-	install -d -m 755 $(LIBDIR)
-	install -c -m 644 $(wildcard ${LIBSRC}/*) $(LIBDIR)
-	install -d -m 755 $(INCLUDEDIR)
-	install -c -m 644 $(wildcard include/*) $(INCLUDEDIR)
-	install -d -m 755 $(MANDIR)
-	install -c -m 644 $(MANPAGE) $(MANDIR)
-	install -d -m 755 $(DEMODIR)
-	install -c -m 644 $(wildcard ${DEMO}/*) $(DEMODIR)
-	install -d -m 755 $(TUTORDIR)
-	install -c -m 644 $(wildcard ${TUTOR}/*) $(TUTORDIR)
-	install -c -m 755 contrib/pblorb.pl $(BINDIR)
-	install -c -m 755 contrib/scanblorb.pl $(BINDIR)
+	install -d -m 755 $(DESTDIR)$(BINDIR)
+	install -c -m 755 $(BINNAME) $(DESTDIR)$(BINDIR)
+	install -d -m 755 $(DESTDIR)$(LIBDIR)
+	install -c -m 644 $(wildcard ${LIBSRC}/*) $(DESTDIR)$(LIBDIR)
+	install -d -m 755 $(DESTDIR)$(INCLUDEDIR)
+	install -c -m 644 $(wildcard include/*) $(DESTDIR)$(INCLUDEDIR)
+	install -d -m 755 $(DESTDIR)$(MANDIR)
+	install -c -m 644 $(MANPAGE) $(DESTDIR)$(MANDIR)
+	install -d -m 755 $(DESTDIR)$(DEMODIR)
+	install -c -m 644 $(wildcard ${DEMO}/*) $(DESTDIR)$(DEMODIR)
+	install -d -m 755 $(DESTDIR)$(TUTORDIR)
+	install -c -m 644 $(wildcard ${TUTOR}/*) $(DESTDIR)$(TUTORDIR)
+	install -c -m 755 contrib/pblorb.pl $(DESTDIR)$(BINDIR)
+	install -c -m 755 contrib/scanblorb.pl $(DESTDIR)$(BINDIR)
 
 install-strip: strip install
 
